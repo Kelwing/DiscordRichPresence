@@ -4,3 +4,7 @@
 
 A very simple, portable, and cross platform [Discord](https://discordapp.com) Rich presence made up of just an executable and config file.
 Created in [Rust](https://www.rust-lang.org)!
+
+## Documentation
+
+You can read a guide on setting up rich presence [here](docs/index.md)

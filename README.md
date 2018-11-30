@@ -7,7 +7,7 @@ Created in [Rust](https://www.rust-lang.org)!
 
 ## Documentation
 
-You can read a guide on setting up rich presence [here](docs/index.md)
+You can read a guide on setting up rich presence [here](docs/setup.md)
 
 ## Download
 

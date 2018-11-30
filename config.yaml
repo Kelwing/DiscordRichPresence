@@ -1,0 +1,18 @@
+---
+client_id: 11122233344455666
+interval: 30000
+statuses:
+- state: "Discord Rich Presence"
+  details: "discord_rp"
+  assets:
+    large_image: "image1"
+    large_text: "Proudly written in Rust"
+    small_image: "kelwing_pfp"
+    small_text: "Developer"
+- state: "My second state"
+  details: "Details for my second state"
+  assets:
+    large_image: "image2"
+    large_text: "Hey look another image!"
+    small_image: "image3"
+    small_text: "Dis image is tiny!"

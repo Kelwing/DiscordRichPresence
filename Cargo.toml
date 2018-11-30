@@ -1,0 +1,8 @@
+[package]
+name = "discord_rp"
+version = "0.1.0"
+authors = ["Jacob Wiltse <aquabug@gmail.com>"]
+
+[dependencies]
+discord-rpc-client = "^0.2"
+yaml-rust = "0.4"

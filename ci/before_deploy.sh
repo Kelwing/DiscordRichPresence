@@ -22,7 +22,14 @@ main() {
 
     # TODO Update this to package the right artifacts
     cp config.yaml $stage/
-    cp target/$TARGET/release/discord_rp $stage/
+    if [[ -e target/$TARGET/release/discord_rp ]]
+    then
+        cp target/$TARGET/release/discord_rp $stage/
+    fi
+    if [[ -e target/$TARGET/release/discord_rp.exe ]]
+    then
+        cp target/$TARGET/release/discord_rp.exe $stage/
+    fi
 
     cd $stage
     tar czf $src/$CRATE_NAME-$TRAVIS_TAG-$TARGET.tar.gz *

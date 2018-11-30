@@ -21,6 +21,7 @@ main() {
     cross rustc --bin discord_rp --target $TARGET --release -- -C lto
 
     # TODO Update this to package the right artifacts
+    cp config.yaml $stage/
     cp target/$TARGET/release/discord_rp $stage/
 
     cd $stage

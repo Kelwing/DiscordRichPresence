@@ -8,3 +8,7 @@ Created in [Rust](https://www.rust-lang.org)!
 ## Documentation
 
 You can read a guide on setting up rich presence [here](docs/index.md)
+
+## Download
+
+[Click here](https://github.com/Kelwing/DiscordRichPresence/releases) to head to the releases page, and download the correct package for your operating system.

@@ -1,3 +1,21 @@
+/*
+    DiscordRP - Simple Discord Rich Presence
+    Copyright (C) 2018  Jacob Wiltse
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 extern crate discord_rpc_client;
 extern crate yaml_rust;
 
@@ -8,6 +26,13 @@ use discord_rpc_client::Client as DiscordRPC;
 use yaml_rust::{YamlLoader};
 
 fn main() {
+    let notice = "    DiscordRP  Copyright (C) 2018  Jacob Wiltse
+    This program comes with ABSOLUTELY NO WARRANTY.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions.\n";
+
+    println!("{}", notice);
+
     // Read in YAML config
     let mut f = File::open("config.yaml").expect("file not found");
     let mut contents = String::new();
@@ -33,7 +58,7 @@ fn main() {
     if conf_interval < 15000 {
         conf_interval = 15000;
     }
-    println!("Changing status ever {} milliseconds", conf_interval);
+    println!("Changing status every {} milliseconds", conf_interval);
     let interval = time::Duration::from_millis(conf_interval as u64);
     loop {
         // Update the users activity using the current status

@@ -9,8 +9,10 @@ Make sure you pick a good name - this will show up in your rich presence.
 2. Once you  have your application created, head to the Art Assets section of the application config.
 
 ![discord app menu](images/menu.png)
+
 3. Upload the images you would like to use in your rich presence.  Note the names at the bottom of this page after they're uploaded.  You will need to put these in your config.yaml.
 4. Open up the config.yaml in your favorite text editor.
+
 ```yaml
 client_id: 11122233344455666 # This is the Client ID from the application you created
 interval: 30000 # How often to change your rich presence in milliseconds (min. 15000)

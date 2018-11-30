@@ -22,11 +22,11 @@ main() {
 
     # TODO Update this to package the right artifacts
     cp config.yaml $stage/
-    if [[ -e target/$TARGET/release/discord_rp ]]
+    if [ -e target/$TARGET/release/discord_rp ]
     then
         cp target/$TARGET/release/discord_rp $stage/
     fi
-    if [[ -e target/$TARGET/release/discord_rp.exe ]]
+    if [ -e target/$TARGET/release/discord_rp.exe ]
     then
         cp target/$TARGET/release/discord_rp.exe $stage/
     fi

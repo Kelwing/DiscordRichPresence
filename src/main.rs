@@ -8,20 +8,27 @@ use discord_rpc_client::Client as DiscordRPC;
 use yaml_rust::{YamlLoader};
 
 fn main() {
+    // Read in YAML config
     let mut f = File::open("config.yaml").expect("file not found");
     let mut contents = String::new();
     f.read_to_string(&mut contents)
         .expect("something went wrong reading the file");
     let docs = YamlLoader::load_from_str(&contents).unwrap();
+    // yaml-rust supports multiple docs per file, we only use the first one
     let conf = &docs[0];
+    // Create DiscordRPC object using app client ID from config
     let mut drpc = DiscordRPC::new(conf["client_id"].as_i64().unwrap() as u64)
         .expect("Failed to create client");
 
+    // Open the RPC connection
     drpc.start();
 
     println!("Connected to Discord RPC");
 
+    // Current statuses state
     let mut current = 0;
+
+    // Discord imposes a rate limit of one presence update every 15 seconds
     let mut conf_interval = conf["interval"].as_i64().unwrap();
     if conf_interval < 15000 {
         conf_interval = 15000;
@@ -29,6 +36,7 @@ fn main() {
     println!("Changing status ever {} milliseconds", conf_interval);
     let interval = time::Duration::from_millis(conf_interval as u64);
     loop {
+        // Update the users activity using the current status
         if let Err(why) = drpc.set_activity(|a| a
             .state(conf["statuses"][current]["state"].as_str().unwrap())
             .details(conf["statuses"][current]["details"].as_str().unwrap())
